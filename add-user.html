@@ -18,6 +18,7 @@
 	<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/data_entry.css" rel="stylesheet" type="text/css" />
 	<!--end::Global Stylesheets Bundle-->
 
 </head>
@@ -32,6 +33,7 @@
 		<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
 			<!--begin::Wrapper-->
 			<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+
 				<!--begin::Main-->
 				<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 					<!--begin::Content wrapper-->
@@ -155,7 +157,8 @@
 												role="tab-panel">
 												<div class="d-flex flex-column gap-7 gap-lg-10">
 													<!--begin::General options-->
-													<div class="card card-flush py-4">
+													<div class="card card-flush py-4"
+														id="kt_ecommerce_add_product_advanced">
 														<!--begin::Card header-->
 														<div class="card-header">
 															<div class="card-title">
@@ -163,161 +166,641 @@
 															</div>
 														</div>
 														<!--end::Card header-->
-														<!--begin::Card body-->
+														<!--begin:: general information-->
 														<div class="card-body pt-0">
-															<!--begin:: username -->
-															<div class="form-floating mb-10 fv-row">
-																<!--begin::Input-->
-																<input type="text" name="user_name"
-																	class="form-control mb-2" placeholder="Product name"
-																	value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your Name</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: username -->
-															<!--begin:: gender-->
-															<div class="form-floating mb-10 fv-row">
-																<select class="form-select mb-2" data-control="select2"
-																	data-hide-search="true"
-																	data-placeholder="Select a Gender"
-																	name="user_gender">
-																	<option></option>
-																	<option value="male">Male</option>
-																	<option value="female">Female</option>
-																</select>
-																<!--begin::Label-->
-																<label class="required form-label">Your Gender</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: gender-->
-															<!-- begin:: birthday -->
-															<div class="mb-10 fv-row">
-																<!--begin::Label-->
-																<label class="required form-label">Your
-																	Brithday</label>
-																<!-- end::label -->
-																<div class="input-group" id="kt_td_picker_basic"
-																	data-td-target-input="nearest"
-																	data-td-target-toggle="nearest">
-																	<input id="kt_td_picker_basic_input" type="text"
-																		class="form-control"
-																		data-td-target="#kt_td_picker_basic" />
-																	<span class="input-group-text"
-																		data-td-target="#kt_td_picker_basic"
-																		data-td-toggle="datetimepicker">
-																		<i class="ki-duotone ki-calendar fs-2"><span
-																				class="path1"></span><span
-																				class="path2"></span></i>
-																	</span>
+															<div class="row">
+																<div class="col-6">
+																	<!--begin:: username -->
+																	<div class="form-floating mb-10 fv-row">
+																		<!--begin::Input-->
+																		<input type="text" name="user_name"
+																			class="form-control mb-2"
+																			placeholder="Product name" value="" />
+																		<!--end::Input-->
+																		<!--begin::Label-->
+																		<label class="required form-label">Your
+																			Name</label>
+																		<!--end::Label-->
+																	</div>
+																	<!--end:: username -->
+																</div>
+																<div class="col-6">
+
+																	<!--begin::Location-->
+																	<div class="form-floating mb-10 fv-row">
+																		<!--begin::Input-->
+																		<input type="text" name="user_location"
+																			class="form-control mb-2"
+																			placeholder="location" value="" />
+																		<!--end::Input-->
+																		<!--begin::Label-->
+																		<label class="required form-label">Your
+																			Location</label>
+																		<!--end::Label-->
+																	</div>
+																	<!--end::Location-->
 																</div>
 															</div>
-															<!-- end:: birthday -->
+															<div class="row">
+																<div class="col-6">
+																	<!--begin:: gender-->
+																	<div class=" mb-10 fv-row">
+																		<!--begin::Label-->
+																		<label class="required form-label">Your
+																			Gender</label>
+																		<!--end::Label-->
+																		<select class="form-select mb-2"
+																			data-control="select2"
+																			data-hide-search="true"
+																			data-placeholder="Select a Gender"
+																			name="user_gender">
+																			<option></option>
+																			<option value="male">Male</option>
+																			<option value="female">Female</option>
+																		</select>
+																	</div>
+																	<!--end:: gender-->
+																</div>
+																<div class="col-6">
+																	<!-- begin:: birthday -->
+																	<div class="mb-10 fv-row">
+																		<!--begin::Label-->
+																		<label class="required form-label">Your
+																			Brithday</label>
+																		<!-- end::label -->
+																		<div class="input-group" id="kt_td_picker_basic"
+																			data-td-target-input="nearest"
+																			data-td-target-toggle="nearest">
+																			<input id="kt_td_picker_basic_input"
+																				type="text" class="form-control"
+																				data-td-target="#kt_td_picker_basic" />
+																			<span class="input-group-text"
+																				data-td-target="#kt_td_picker_basic"
+																				data-td-toggle="datetimepicker">
+																				<i class="ki-duotone ki-calendar fs-2"><span
+																						class="path1"></span><span
+																						class="path2"></span></i>
+																			</span>
+																		</div>
+																	</div>
+																	<!-- end:: birthday -->
+																</div>
+															</div>
+															<!--end::Card header-->
+														</div>
+														<!--end:: General -->
+														<!--begin:: contact information-->
+														<div class="card card-flush py-4">
+															<!--begin::Card header-->
+															<div class="card-header">
+																<div class="card-title">
+																	<h2>Contact Information</h2>
+																</div>
+															</div>
+															<!--end::Card header-->
+															<!--begin::Card body-->
+															<div class="card-body pt-0">
+																<div class="row">
+																	<div class="col-6">
+																		<!--begin:: phone -->
+																		<div class="mb-10 fv-row form-floating">
+																			<!--begin::Input-->
+																			<input type="text" name="user_phone"
+																				class="form-control mb-2"
+																				placeholder="Phone Number" value="" />
+																			<!--end::Input-->
+																			<!--begin::Label-->
+																			<label class="required form-label">Your
+																				Phone
+																				Number</label>
+																			<!--end::Label-->
+																		</div>
+																		<!--end:: phone -->
+																		<!--begin:: email -->
+																		<div class="mb-10 fv-row form-floating">
+																			<!--begin::Input-->
+																			<input type="text" name="user_email"
+																				class="form-control mb-2"
+																				placeholder="Email Address" value="" />
+																			<!--end::Input-->
+																			<!--begin::Label-->
+																			<label class="required form-label">Your
+																				E-mail
+																				Address</label>
+																			<!--end::Label-->
+																		</div>
+																		<!--end:: email -->
+																	</div>
+																	<div class="col-6">
+																		<!--begin:: skype ID -->
+																		<div class="mb-10 fv-row form-floating">
+																			<!--begin::Input-->
+																			<input type="text" name="user_skype"
+																				class="form-control mb-2"
+																				placeholder="Skype ID" value="" />
+																			<!--end::Input-->
+																			<!--begin::Label-->
+																			<label class="required form-label">Your
+																				Skype
+																				ID</label>
+																			<!--end::Label-->
+																		</div>
+																		<!--end:: skype ID -->
+																		<!--begin:: own website -->
+																		<div class="mb-10 fv-row form-floating">
+																			<!--begin::Input-->
+																			<input type="text" name="user_website"
+																				class="form-control mb-2"
+																				placeholder="Website Address"
+																				value="" />
+																			<!--end::Input-->
+																			<!--begin::Label-->
+																			<label class="required form-label">Your
+																				Website
+																				Address</label>
+																			<!--end::Label-->
+																		</div>
+																		<!--end:: own website -->
+																	</div>
+																</div>
+															</div>
+															<!--end::Card header-->
+														</div>
+														<!--end:: contact information-->
+														<!--begin:: PROFESSIONAL AREA-->
+														<div class="card card-flush py-4">
+															<!--begin::Card header-->
+															<div class="card-header">
+																<div class="card-title">
+																	<h2> PROFESSIONAL AREA</h2>
+																</div>
+															</div>
+															<!--end::Card header-->
+															<!--begin::Card body-->
+															<div class="card-body pt-0">
+																<!--begin::Repeater-->
+																<div id="professional_area">
+																	<!--begin::Form group-->
+																	<div class="form-group">
+																		<div data-repeater-list="professional_area"
+																			class="d-flex flex-column gap-3">
+																			<div data-repeater-item=""
+																				class="form-group d-flex flex-wrap align-items-center gap-5">
 
-															<!--begin::Location-->
-															<div class="form-floating mb-10 fv-row">
-																<!--begin::Input-->
-																<input type="text" name="user_location"
-																class="form-control mb-2" placeholder="location"
-																value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your Location</label>
-																<!--end::Label-->
+																				<!--begin::Input-->
+																				<input type="text"
+																					class="form-control mw-100 w-300px"
+																					name="professional_area[0][title]"
+																					placeholder="Professional">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text"
+																					class="form-control mw-100 w-300px"
+																					name="professional_area[0][category]"
+																					placeholder="Category">
+																				<!--end::Input-->
+
+																				<button type="button"
+																					data-repeater-delete=""
+																					class="btn btn-sm btn-icon btn-light-danger">
+																					<i class="ki-duotone ki-cross fs-1"><span
+																							class="path1"></span><span
+																							class="path2"></span></i>
+																				</button>
+																			</div>
+																		</div>
+																	</div>
+																	<!--end::Form group-->
+																	<!--begin::Form group-->
+																	<div class="form-group mt-5">
+																		<button type="button" data-repeater-create=""
+																			class="btn btn-sm btn-light-primary">
+																			<i class="ki-duotone ki-plus fs-2"></i> Add
+																		</button>
+																	</div>
+																	<!--end::Form group-->
+																</div>
+																<!--end::Repeater-->
 															</div>
-															<!--end::Location-->
+															<!--end::Card header-->
 														</div>
-														<!--end::Card header-->
+														<!--end:: PROFESSIONAL AREA-->
+														<!-- start:: education -->
+														<div class="card card-flush py-4">
+															<!--begin::Card header-->
+															<div class="card-header">
+																<div class="card-title">
+																	<h2>Education</h2>
+																</div>
+															</div>
+															<!--end::Card header-->
+															<div class="card-body pt-0">
+																<!--begin::Repeater-->
+																<div id="education">
+																	<!--begin::Form group-->
+																	<div class="form-group">
+																		<div data-repeater-list="education"
+																			class="d-flex flex-column gap-3">
+																			<div data-repeater-item=""
+																				class="form-group row">
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="education[0][University]"
+																					placeholder="University / College">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="education[0][degree]"
+																					placeholder="Degree">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="education[0][location]"
+																					placeholder="Location">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="education[0][start]"
+																					placeholder="Start">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="education[0][end]"
+																					placeholder="End">
+																				<!--end::Input-->
+
+																				<button type="button"
+																					data-repeater-delete=""
+																					class="btn btn-sm btn-icon btn-light-danger">
+																					<i class="ki-duotone ki-cross fs-1"><span
+																							class="path1"></span><span
+																							class="path2"></span></i>
+																				</button>
+																			</div>
+																		</div>
+																	</div>
+																	<!--end::Form group-->
+																	<!--begin::Form group-->
+																	<div class="form-group mt-5">
+																		<button type="button" data-repeater-create=""
+																			class="btn btn-sm btn-light-primary">
+																			<i class="ki-duotone ki-plus fs-2"></i> Add
+																		</button>
+																	</div>
+																	<!--end::Form group-->
+																</div>
+																<!--end::Repeater-->
+															</div>
+														</div>
+														<!-- end:: education -->
+														<!-- start:: experience -->
+														<div class="card card-flush py-4">
+															<!--begin::Card header-->
+															<div class="card-header">
+																<div class="card-title">
+																	<h2>Experience</h2>
+																</div>
+															</div>
+															<!--end::Card header-->
+															<div class="card-body pt-0">
+																<!--begin::Repeater-->
+																<div id="experience">
+																	<!--begin::Form group-->
+																	<div class="form-group">
+																		<div data-repeater-list="experience"
+																			class="d-flex flex-column gap-3">
+																			<div data-repeater-item=""
+																				class="form-group row">
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="experience[0][company]"
+																					placeholder="Company">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="experience[0][location]"
+																					placeholder="Location">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="experience[0][start]"
+																					placeholder="Start">
+																				<!--end::Input-->
+
+																				<!--begin::Input-->
+																				<input type="text" class="form-control"
+																					name="experience[0][end]"
+																					placeholder="End">
+																				<!--end::Input-->
+
+																				<button type="button"
+																					data-repeater-delete=""
+																					class="btn btn-sm btn-icon btn-light-danger">
+																					<i class="ki-duotone ki-cross fs-1"><span
+																							class="path1"></span><span
+																							class="path2"></span></i>
+																				</button>
+																			</div>
+																		</div>
+																	</div>
+																	<!--end::Form group-->
+																	<!--begin::Form group-->
+																	<div class="form-group mt-5">
+																		<button type="button" data-repeater-create=""
+																			class="btn btn-sm btn-light-primary">
+																			<i class="ki-duotone ki-plus fs-2"></i> Add
+																		</button>
+																	</div>
+																	<!--end::Form group-->
+																</div>
+																<!--end::Repeater-->
+															</div>
+														</div>
+														<!-- end:: experience -->
+														<!--begin:: job related -->
+														<div class="card card-flush py-4">
+															<div class="card-header">
+																<div class="card-title">
+																	<h2>Skills</h2>
+																</div>
+															</div>
+															<div class="card-body">
+
+																<!--begin::Card header-->
+																<div class="card-header">
+																	<div class="card-title flex-column">
+																		<h3>Transferable</h3>
+																		<small>Type about your transferable skill. For
+																			example, first item: "HTML", second item:
+																			"20"(This means 20% out of 100%)</small>
+																	</div>
+																</div>
+																<!--end::Card header-->
+																<!--begin::Card body-->
+																<div class="card-body pt-0">
+																	<!--begin::Repeater-->
+																	<div id="transferable">
+																		<!--begin::Form group-->
+																		<div class="form-group">
+																			<div data-repeater-list="transferable"
+																				class="d-flex flex-column gap-3">
+																				<div data-repeater-item=""
+																					class="form-group d-flex flex-wrap align-items-center gap-5">
+
+																					<!--begin::Input-->
+																					<input type="text"
+																						class="form-control mw-100 w-300px"
+																						name="transferable[0][title]"
+																						placeholder="">
+																					<!--end::Input-->
+
+																					<!--begin::Input-->
+																					<input type="text"
+																						class="form-control mw-100 w-300px"
+																						name="transferable[0][rate]"
+																						placeholder="">
+																					<!--end::Input-->
+
+																					<button type="button"
+																						data-repeater-delete=""
+																						class="btn btn-sm btn-icon btn-light-danger">
+																						<i
+																							class="ki-duotone ki-cross fs-1"><span
+																								class="path1"></span><span
+																								class="path2"></span></i>
+																					</button>
+																				</div>
+																			</div>
+																		</div>
+																		<!--end::Form group-->
+																		<!--begin::Form group-->
+																		<div class="form-group mt-5">
+																			<button type="button"
+																				data-repeater-create=""
+																				class="btn btn-sm btn-light-primary">
+																				<i class="ki-duotone ki-plus fs-2"></i>
+																				Add
+																			</button>
+																		</div>
+																		<!--end::Form group-->
+																	</div>
+																	<!--end::Repeater-->
+																</div>
+																<!--end::Card header-->
+																<!--begin::Card header-->
+																<div class="card-header">
+																	<div class="card-title">
+																		<h3>Job Related</h3>
+																	</div>
+																</div>
+																<!--end::Card header-->
+																<!--begin::Card body-->
+																<div class="card-body pt-0">
+																	<div class="row">
+																		<div class="col-6">
+																			<!--begin:: phone -->
+																			<div class="mb-10 fv-row form-floating">
+																				<!--begin::Input-->
+																				<input type="text" name="best_at"
+																					class="form-control mb-2"
+																					placeholder="" value="" />
+																				<!--end::Input-->
+																				<!--begin::Label-->
+																				<label class="required form-label">Best
+																					At
+																				</label>
+																				<!--end::Label-->
+																			</div>
+																			<!--end:: phone -->
+																			<!--begin:: skype ID -->
+																			<div class="mb-10 fv-row form-floating">
+																				<!--begin::Input-->
+																				<input type="text" name="will_improve"
+																					class="form-control mb-2"
+																					placeholder="" value="" />
+																				<!--end::Input-->
+																				<!--begin::Label-->
+																				<label class="required form-label">
+																					Will Improve</label>
+																				<!--end::Label-->
+																			</div>
+																			<!--end:: skype ID -->
+
+																		</div>
+																		<div class="col-6">
+																			<!--begin:: email -->
+																			<div class="mb-10 fv-row form-floating">
+																				<!--begin::Input-->
+																				<input type="text" name="good_at"
+																					class="form-control mb-2"
+																					placeholder="Email Address"
+																					value="" />
+																				<!--end::Input-->
+																				<!--begin::Label-->
+																				<label class="required form-label">
+																					Good At</label>
+																				<!--end::Label-->
+																			</div>
+																			<!--end:: email -->
+																			<!--begin:: own website -->
+																			<div class="mb-10 fv-row form-floating">
+																				<!--begin::Input-->
+																				<input type="text" name="start_learning"
+																					class="form-control mb-2"
+																					placeholder="" value="" />
+																				<!--end::Input-->
+																				<!--begin::Label-->
+																				<label class="required form-label">Start
+																					Learning</label>
+																				<!--end::Label-->
+																			</div>
+																			<!--end:: own website -->
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<!--end::Card header-->
+														</div>
+														<!--end:: contact information-->
+														<!-- start:: language -->
+														<div class="card card-flush py-4">
+															<div class="row">
+																<div class="col-4">
+																	<div class="card-header">
+																		<div class="card-title">
+																			<h2>Hobbies</h2>
+																		</div>
+																	</div>
+																	<!--end::Card header-->
+																	<!--begin::Card body-->
+																	<div class="card-body pt-0">
+																		<!--begin::Repeater-->
+																		<div id="hobby">
+																			<!--begin::Form group-->
+																			<div class="form-group">
+																				<div data-repeater-list="hobby"
+																					class="d-flex flex-column gap-3">
+																					<div data-repeater-item=""
+																						class="form-group d-flex flex-wrap align-items-center gap-5">
+
+																						<!--begin::Input-->
+																						<input type="text"
+																							class="form-control mw-100"
+																							style="width: 67%;"
+																							name="hobby[0][title]"
+																							placeholder="Your Hobby">
+																						<!--end::Input-->
+
+																						<button type="button"
+																							data-repeater-delete=""
+																							class="btn btn-sm btn-icon btn-light-danger">
+																							<i
+																								class="ki-duotone ki-cross fs-1"><span
+																									class="path1"></span><span
+																									class="path2"></span></i>
+																						</button>
+																					</div>
+																				</div>
+																			</div>
+																			<!--end::Form group-->
+																			<!--begin::Form group-->
+																			<div class="form-group mt-5">
+																				<button type="button"
+																					data-repeater-create=""
+																					class="btn btn-sm btn-light-primary">
+																					<i
+																						class="ki-duotone ki-plus fs-2"></i>
+																					Add
+																				</button>
+																			</div>
+																			<!--end::Form group-->
+																		</div>
+																		<!--end::Repeater-->
+																	</div>
+																</div>
+																<div class="col-8">
+																	<div class="card-header">
+																		<div class="card-title flex-column">
+																			<h2>Language</h2>
+																			<small>Type about your language level. For
+																				example, first item: "english", second
+																				item:
+																				"2"(This means 2 out of 5 levels)</small>
+																		</div>
+																	</div>
+																	<!--end::Card header-->
+																	<!--begin::Card body-->
+																	<div class="card-body pt-0">
+																		<!--begin::Repeater-->
+																		<div id="language">
+																			<!--begin::Form group-->
+																			<div class="form-group">
+																				<div data-repeater-list="language"
+																					class="d-flex flex-column gap-3">
+																					<div data-repeater-item=""
+																						class="form-group d-flex flex-wrap align-items-center gap-5">
+
+																						<!--begin::Input-->
+																						<input type="text"
+																							class="form-control mw-100 w-300px"
+																							name="language[0][title]"
+																							placeholder="">
+																						<!--end::Input-->
+
+																						<!--begin::Input-->
+																						<input type="text"
+																							class="form-control mw-100 w-300px"
+																							name="language[0][rate]"
+																							placeholder="">
+																						<!--end::Input-->
+
+																						<button type="button"
+																							data-repeater-delete=""
+																							class="btn btn-sm btn-icon btn-light-danger">
+																							<i
+																								class="ki-duotone ki-cross fs-1"><span
+																									class="path1"></span><span
+																									class="path2"></span></i>
+																						</button>
+																					</div>
+																				</div>
+																			</div>
+																			<!--end::Form group-->
+																			<!--begin::Form group-->
+																			<div class="form-group mt-5">
+																				<button type="button"
+																					data-repeater-create=""
+																					class="btn btn-sm btn-light-primary">
+																					<i
+																						class="ki-duotone ki-plus fs-2"></i>
+																					Add
+																				</button>
+																			</div>
+																			<!--end::Form group-->
+																		</div>
+																		<!--end::Repeater-->
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- end:: language -->
 													</div>
-													<!--end::General options-->
-													<!--begin:: contact information-->
-													<div class="card card-flush py-4">
-														<!--begin::Card header-->
-														<div class="card-header">
-															<div class="card-title">
-																<h2>Contact Information</h2>
-															</div>
-														</div>
-														<!--end::Card header-->
-														<!--begin::Card body-->
-														<div class="card-body pt-0">
-															<!--begin:: phone -->
-															<div class="mb-10 fv-row form-floating">
-																<!--begin::Input-->
-																<input type="text" name="user_phone"
-																	class="form-control mb-2" placeholder="Phone Number"
-																	value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your Phone
-																	Number</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: phone -->
-															<!--begin:: email -->
-															<div class="mb-10 fv-row form-floating">
-																<!--begin::Input-->
-																<input type="text" name="user_email"
-																	class="form-control mb-2"
-																	placeholder="Email Address" value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your E-mail
-																	Address</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: email -->
-															<!--begin:: skype ID -->
-															<div class="mb-10 fv-row form-floating">
-																<!--begin::Input-->
-																<input type="text" name="user_skype"
-																	class="form-control mb-2" placeholder="Skype ID"
-																	value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your Skype ID</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: skype ID -->
-															<!--begin:: own website -->
-															<div class="mb-10 fv-row form-floating">
-																<!--begin::Input-->
-																<input type="text" name="user_website"
-																	class="form-control mb-2"
-																	placeholder="Website Address" value="" />
-																<!--end::Input-->
-																<!--begin::Label-->
-																<label class="required form-label">Your Website
-																	Address</label>
-																<!--end::Label-->
-															</div>
-															<!--end:: own website -->
-														</div>
-														<!--end::Card header-->
-													</div>
-													<!--end:: contact information-->
-													<!--begin:: PROFESSIONAL AREA-->
-													<div class="card card-flush py-4">
-														<!--begin::Card header-->
-														<div class="card-header">
-															<div class="card-title">
-																<h2> PROFESSIONAL AREA</h2>
-															</div>
-														</div>
-														<!--end::Card header-->
-														<!--begin::Card body-->
-														
-														<!--end::Card header-->
-													</div>
-													<!--end:: PROFESSIONAL AREA-->
 												</div>
+												<!--end::Tab pane-->
 											</div>
-											<!--end::Tab pane-->
+											<!--end::Tab content-->
 										</div>
-										<!--end::Tab content-->
-									</div>
-									<!--end::Main column-->
+										<!--end::Main column-->
 								</form>
 								<!--end::Form-->
 							</div>
@@ -365,7 +848,7 @@
 		<!--end::Page-->
 	</div>
 	<!--end::App-->
-	
+
 	<!--begin::Javascript-->
 	<!--begin::Global Javascript Bundle(mandatory for all pages)-->
 	<script src="assets/plugins/global/plugins.bundle.js"></script>
@@ -373,7 +856,9 @@
 	<!--end::Global Javascript Bundle-->
 
 	<!--begin::Custom Javascript(used for this page only)-->
-	<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+	<script src="assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
+	<script src="assets/js/custom/pages/save-product.js"></script>
+
 	<script src="assets/js/custom/add_user/main.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->

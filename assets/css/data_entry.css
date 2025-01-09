@@ -1,0 +1,20 @@
+#professional_area input {
+    width: 45% !important;
+    margin-right: 10px;
+}
+#education input{
+    width: 19% !important;
+    margin-right: 2px;
+}
+#experience input{
+    width: 23% !important;
+    margin-right: 10px;
+}
+#transferable input {
+    width: 45% !important;
+    margin-right: 8px;
+}
+#language input {
+    width: 42% !important;
+    margin-right: 8px;
+}
